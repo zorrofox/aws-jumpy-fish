@@ -1,11 +1,10 @@
 AWS Jumpy Fish for Shanghai Submit 2015
 ===========
 
-A MelonJS made "Flappy Bird" clone.
+A Lambda Function as "Flappy Bird" like game backend.
 
-![](http://i.imgur.com/Slbvt65.png)
+![](architect.jpg)
 
-Play online at http://ellisonleao.github.io/clumsy-bird/
 
 ## Running Locally
 
