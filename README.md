@@ -12,6 +12,10 @@ A Lambda Function as "Flappy Bird" like game backend.
 
 - Create a lambda function used the [source code](lambda_functions/aws-bird.js)
 
+- Create a DynomDB table named `aws-bird-highscore` used `uuid` as hash index.
+
+- At last brower the S3 website to test!
+
 
 
 ## Some nice games made with this project
