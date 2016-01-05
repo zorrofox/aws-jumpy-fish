@@ -6,26 +6,13 @@ A Lambda Function as "Flappy Bird" like game backend.
 ![](architect.png)
 
 
-## Running Locally
+## Running on AWS
 
-- Install [Node](http://nodejs.org/download/) and [Grunt](http://gruntjs.com/)
-- Install the dependencies
+- Create a bulket on S3 and enable the static website feather, upload all the static resources to this bulket.
 
-```
-npm install
-```
+- Create a lambda function used the [source code](lambda_functions/aws-bird.js)
 
-Then just type on your shell:
 
-```
-grunt connect
-```
-
-Open your browser at `http://localhost:8001/`
-
-## Making your customization
-
-See [CUSTOMIZING](https://github.com/ellisonleao/clumsy-bird/blob/gh-pages/CUSTOMIZING.md)
 
 ## Some nice games made with this project
 
