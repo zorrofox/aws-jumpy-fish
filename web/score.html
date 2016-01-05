@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<title>AWS Jumpy Fish - Highscores</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="index.css">
+	<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="Clumsy Bird">
+	<meta charset="UTF-8" />
+	<meta name="description" content="AWS Jumpy Fish - A Flappy Bird clone using MelonJS and AWS" />
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="js/aws-sdk-lambda.min.js"></script>
+	<script type="text/javascript" src="js/config.js" ></script>
+</head>
+
+<body>
+	<center>
+		<div id="highscores">
+			<div id="title">
+				Highscores:
+			</div>
+			<div id="scores">
+			</div><br><br>
+			<div id="return">
+			    <a href="index.html">RETURN</a>
+			</div>
+	</center>
+  <script>
+    function updateScores() {
+      AWS.config.update({accessKeyId: globalConfig.accessKeyId, secretAccessKey: globalConfig.secretAccessKey});
+      AWS.config.region = globalConfig.region;
+
+      //Post New Score
+      var lambda = new AWS.Lambda();
+      lambda.invoke({
+          FunctionName: globalConfig.lambdaFunction,
+          Payload : JSON.stringify({action: 'getHighScores'})
+        }, function(err, data) {
+          if (err) console.log(err.stack)
+          else {
+            var result = JSON.parse(data.Payload);
+            $('#scores').empty();
+            for (i = 0; i < result.length; i++) {
+              var item = result[i];
+              $("#scores").append('<div class="item"><div class="player">'+item.player+'</div><div class="score">'+item.score+'</div></div>');
+            }
+            setTimeout(updateScores, 8000);
+          }
+        });
+    }
+    updateScores();
+  </script>
+</body>
+
+</html>

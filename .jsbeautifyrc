@@ -1,0 +1,14 @@
+{
+  "indent_size": 2,
+  "js_keep_function_indentation": false,
+  "indent_char": " ",
+  "other": " ",
+  "indent_level": 1,
+  "indent_with_tabs": true,
+  "preserve_newlines": true,
+  "max_preserve_newlines": 2,
+  "jslint_happy": true,
+  "indent_handlebars": true,
+  "object": {},
+
+}

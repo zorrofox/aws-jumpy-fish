@@ -1,0 +1,92 @@
+body {
+  background-color: #0099cc;
+  color: #fff;
+
+  /* Allow mouse dragging. */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+
+  /* disable touch panning/zooming */
+  -ms-touch-action: none;
+  touch-action: none;
+
+  /* Allow canvas to hit the edges of the browser viewport. */
+  margin: 0;
+}
+
+#screen {
+    position: relative;
+}
+
+#screen input {
+    position: absolute;
+    z-index: 2;
+}
+
+#screen canvas {
+  margin: auto;
+  /* Hide the gap for font descenders. */
+  display: block;
+
+  /* disable scaling interpolation */
+  image-rendering: optimizeSpeed;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+
+#highscores {
+  background-image: url('data/img/bg.png');
+  width: 900px;
+  height:504px;
+  font-family: 'gamefont';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -450px;
+  margin-top: -252px;
+}
+
+#highscores #title {
+  font-size: 50px;
+  padding:10px;
+  color: #FFFF33;
+  text-shadow: 5px 5px #000000;
+}
+
+#highscores .item {
+  font-size: 30px;
+  margin-left:100px;
+  padding:5px;
+  color: #FFFF33;
+  text-shadow: 5px 5px #000000;
+}
+
+#highscores .player {
+  width:50%;
+  float:left;
+  text-align: left;
+  padding-left:60px;
+}
+
+#highscores .score {
+  width:50%;
+  text-align: right;
+
+}
+
+@font-face {
+  font-family: 'gamefont';
+  src: url('data/css/gamefont.eot');
+  src: url('data/css/gamefont.eot?#iefix') format('embedded-opentype'),
+     url('data/css/gamefont.woff') format('woff'),
+     url('data/css/gamefont.ttf') format('truetype'),
+     url('data/css/gamefont.svg#gamefont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
