@@ -3,7 +3,7 @@ AWS Jumpy Fish for Shanghai Submit 2015
 
 A Lambda Function as "Flappy Bird" like game backend.
 
-![](architect.jpg)
+![](architect.png)
 
 
 ## Running Locally
